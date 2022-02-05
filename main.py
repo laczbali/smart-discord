@@ -200,6 +200,7 @@ def query_openai(context):
 @client.event
 async def on_ready():
     print('bot ready')
+    await client.change_presence(activity=discord.Activity(type=discord.ActivityType.watching, name="for /help"))
 
 
 # handlle messages on server
@@ -223,25 +224,25 @@ async def on_message(message):
         await message.channel.send(
         "**Hi! I'm a bot that is powered by OpenAI!** \n" +
 
-        # "I will respond to each message that I'm @mentioned in. \n" +
-        # "Otherwise I will respond every now and then. \n" +
+        "I will respond to each message that I'm @mentioned in. \n" +
+        "Otherwise I will respond every now and then. \n" +
 
-        # "\n" +
+        "\n" +
 
-        # f"If it has been **more than {THRESHOLD} hours** since I've posted, I will reply with **{MAX_CHANCE}% chance.** \n" +
-        # f"If it has been **0 hours**, I will reply with **{MIN_CHANCE}% chance.** \n" +
-        # f"Between those two, I will reply with a linear function of the hours passed. \n" +
-        # f"I check the **last {CONTEXT_COUNT} messages** for context, when I reply. \n" +
+        f"If it has been **more than {THRESHOLD} hours** since I've posted, I will reply with **{MAX_CHANCE}% chance.** \n" +
+        f"If it has been **0 hours**, I will reply with **{MIN_CHANCE}% chance.** \n" +
+        f"Between those two, I will reply with a linear function of the hours passed. \n" +
+        f"I check the **last {CONTEXT_COUNT} messages** for context, when I reply. \n" +
 
-        # "\n" +
+        "\n" +
 
-        # "To change the chances, the hours or how much context I should look at, use the following command: \n" +
-        # "`@mr.gazsi /set MIN_CHANCE|MAX_CHANCE|THRESHOLD|CONTEXT_COUNT VALUE` \n" +
-        # "The VALUE is a number between 0 and 1 for the chances and an integer for the threshold hours and the context \n" +
-        # "- `@mr.gazsi /set MIN_CHANCE 0.05` \n" +
-        # "- `@mr.gazsi /set MAX_CHANCE 0.95` \n" +
-        # "- `@mr.gazsi /set THRESHOLD 10` \n" +
-        # "- `@mr.gazsi /set CONTEXT_COUNT 5` \n" +
+        "To change the chances, the hours or how much context I should look at, use the following command: \n" +
+        "`@mr.gazsi /set MIN_CHANCE|MAX_CHANCE|THRESHOLD|CONTEXT_COUNT VALUE` \n" +
+        "The VALUE is a number between 0 and 1 for the chances and an integer for the threshold hours and the context \n" +
+        "- `@mr.gazsi /set MIN_CHANCE 0.05` \n" +
+        "- `@mr.gazsi /set MAX_CHANCE 0.95` \n" +
+        "- `@mr.gazsi /set THRESHOLD 10` \n" +
+        "- `@mr.gazsi /set CONTEXT_COUNT 5` \n" +
 
         "\n" +
         
