@@ -171,6 +171,8 @@ def query_openai(context):
         PREFIX = os.environ.get('PROMPT_PREFIX')
         BOTNAME = os.environ.get('BOT_NAME')
         prompt = f"{PREFIX}\n\n{context}\n{BOTNAME}:"
+
+        print(f"Sending prompt:\n{prompt}\n----------")
         
         # send the request
         openai.api_key = os.getenv("OPENAI_TOKEN")
