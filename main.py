@@ -229,8 +229,8 @@ async def on_message(message):
 
         "\n" +
 
-        f"If it has been **more than {THRESHOLD} hours** since I've posted, I will reply with **{MAX_CHANCE}% chance.** \n" +
-        f"If it has been **0 hours**, I will reply with **{MIN_CHANCE}% chance.** \n" +
+        f"If it has been **more than {THRESHOLD} hours** since I've posted, I will reply with **{MAX_CHANCE*100}% chance.** \n" +
+        f"If it has been **0 hours**, I will reply with **{MIN_CHANCE*100}% chance.** \n" +
         f"Between those two, I will reply with a linear function of the hours passed. \n" +
         f"I check the **last {CONTEXT_COUNT} messages** for context, when I reply. \n" +
 
