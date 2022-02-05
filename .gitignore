@@ -1,1 +1,4 @@
-# 
+.env
+inviteurl.txt
+__pycache__/
+fileconst.json
