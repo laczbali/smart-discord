@@ -122,7 +122,9 @@ def should_reply(mentioned, posted_since_h) -> bool:
     chance = interp(posted_since_h, [0, THRESHOLD], [MIN_CHANCE, MAX_CHANCE])
 
     # if the chance is greater than a random number between 0 and 1, reply
-    return chance > random.random()
+    random_num = random.random()
+    print(f'chance: {chance}, random_num: {random_num}, result: {chance > random_num}')
+    return chance > random_num
 
 
 async def get_context(channel):
