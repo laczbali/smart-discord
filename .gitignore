@@ -3,4 +3,6 @@ inviteurl.txt
 __pycache__/
 fileconst.json
 start.bat
-*.history.txt
+*.history.json
+train.jsonl
+train_prepared.jsonl
