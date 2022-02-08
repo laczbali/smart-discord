@@ -41,3 +41,13 @@ Powered by [OpenAI](https://openai.com/)
    - `BOT_NAME=THE_NAME_YOU_GAVE_TO_THE_BOT_IN_STEP3`
    - `OAI_MODEL=THE_OPENAI_MODEL_TO_USE` (recommended is "**text-davinci-001**")
 5. Run **`main.py`**
+
+# Training a custom model
+## Prepare training data
+1. Set up the bot as detailed above
+2. Configure the constants in `get_history.py`, run the script
+3. Run `prepare_training_data.py`
+4. Run the OpenAI data cleanup tool: `openai tools fine_tunes.prepare_data -f .\train.jsonl`, accept all recommended changes, write results to new file
+5. Set your API key as an environment variable
+   - In PowerShell  `$env:OPENAI_API_KEY='<API-kEY>'`
+6. Run `openai api fine_tunes.create -t train_prepared.jsonl -m <BASE_MODEL>` (recommeded base model is `davinci`)
