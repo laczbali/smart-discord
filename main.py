@@ -139,7 +139,7 @@ async def get_context(channel):
     """
     
     # get the last N messages in the channel
-    CONTEXT_COUNT = get_or_create_fileconst('CONTEXT_COUNT', 5)
+    CONTEXT_COUNT = int(get_or_create_fileconst('CONTEXT_COUNT', 5))
     history = await channel.history(limit=CONTEXT_COUNT).flatten()
     history.reverse()
 
