@@ -37,6 +37,7 @@ Powered by [OpenAI](https://openai.com/)
     - `DISCORD_TOKEN=YOUR_KEY_HERE`
 4. Set the OpenAI .env variables
    - `OPENAI_TOKEN=YOUR_KEY_HERE`
-   - `PROMPT_PREFIX=THIS_WILL_BE_ADDED_TO_THE_MESSAGE_CONTEXT`
+   - `PROMPT_PREFIX=THIS_WILL_BE_ADDED_TO_THE_MESSAGE_CONTEXT` (recommended is "**The following is a conversation between friends**")
    - `BOT_NAME=THE_NAME_YOU_GAVE_TO_THE_BOT_IN_STEP3`
-5. Run main.py
+   - `OAI_MODEL=THE_OPENAI_MODEL_TO_USE` (recommended is "**text-davinci-001**")
+5. Run **`main.py`**

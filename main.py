@@ -155,7 +155,6 @@ async def get_context(channel):
     return msg.strip()
 
 
-
 def query_openai(context):
     """
     Build and sends a completion query to OpenAI.
@@ -171,6 +170,7 @@ def query_openai(context):
         # bulid the prompt
         PREFIX = os.environ.get('PROMPT_PREFIX')
         BOTNAME = os.environ.get('BOT_NAME')
+        OAI_MODEL = os.environ.get('OAI_MODEL')
         prompt = f"{PREFIX}\n\n{context}\n{BOTNAME}:"
 
         print(f"----------\nSending prompt:\n\n{prompt}\n----------")
@@ -178,7 +178,7 @@ def query_openai(context):
         # send the request
         openai.api_key = os.getenv("OPENAI_TOKEN")
         response = openai.Completion.create(
-            engine="text-davinci-001",
+            engine=OAI_MODEL,
             prompt=prompt,
             temperature=0.9,
             max_tokens=64,
