@@ -48,7 +48,7 @@ for entry in log:
 
             if current_completion != "":
                 # create a new entry only if the completion is not empty
-                current_completion = f" {current_completion}####"
+                current_completion = f" {current_completion}"
 
                 out = {"prompt": current_prompt, "completion": current_completion}
                 with open("train.jsonl", "a") as f:
