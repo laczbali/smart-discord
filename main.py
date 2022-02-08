@@ -2,7 +2,6 @@ import datetime
 import json
 import os
 import random
-from tracemalloc import stop
 from dotenv import load_dotenv
 import discord
 import openai
