@@ -181,7 +181,7 @@ def query_openai(context):
             engine=OAI_MODEL,
             prompt=prompt,
             temperature=0.9,
-            max_tokens=64,
+            max_tokens=128,
             top_p=1,
             frequency_penalty=0,
             presence_penalty=0.6,
