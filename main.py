@@ -184,8 +184,8 @@ def query_openai(context):
             max_tokens=128,
             top_p=1,
             frequency_penalty=0,
-            presence_penalty=0.6,
-            stop=[":"]
+            presence_penalty=0.6
+            # stop=[":"]
         )
 
         # return the first non-whitespace line of the response
